@@ -2,7 +2,7 @@ import React from "react";
 
 import { createStackNavigator } from "@react-navigation/stack";
 import BottomTabNavigation from "./BottomTabNavigation";
-
+import RecipeDetails from "../screens/RecipeDetails";
 const Stack = createStackNavigator();
 
 export default function StackNavigator() {
@@ -15,6 +15,7 @@ export default function StackNavigator() {
           headerShown: false,
         }}
       />
+      <Stack.Screen name="RecipeDetails" component={RecipeDetails} />
     </Stack.Navigator>
   );
 }
