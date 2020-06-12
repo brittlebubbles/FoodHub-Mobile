@@ -12,7 +12,7 @@ import { TabBar } from "react-native-animated-nav-tab-bar";
 //Import Screens
 import HomeScreen from "../screens/HomeScreen";
 import Search from "../screens/Search";
-import About from "../screens/Account";
+// import About from "../screens/Account";
 import Likes from "../screens/Likes";
 
 const Tabs = createBottomTabNavigator();
