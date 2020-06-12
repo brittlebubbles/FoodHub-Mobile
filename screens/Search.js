@@ -1,7 +1,7 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 
-export default function Search() {
+export default function Search({ navigation }) {
   return (
     <View style={styles.container}>
       <Text>Search</Text>

@@ -1,7 +1,7 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 
-export default function Account() {
+export default function Account({ navigation }) {
   return (
     <View style={styles.container}>
       <Text>Account</Text>
