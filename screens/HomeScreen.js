@@ -16,7 +16,10 @@ import {
   MaterialCommunityIcons,
 } from "@expo/vector-icons";
 import Carousel from "../components/Carousel";
-import { dummyData } from "../data/Data";
+import Category from "../components/Category";
+
+import { dummyData, recipes } from "../data/Data";
+import { FlatList, ScrollView } from "react-native-gesture-handler";
 
 // const { width, height } = Dimensions.get|
 
@@ -26,7 +29,7 @@ export default function HomeScreen({ navigation }) {
       {/* <StatusBar barStyle="light-content" /> */}
 
       <View style={styles.rowMenu}>
-        <Entypo name="list" size={45} color="black" />
+        <Text style={styles.welcomeText}>Hi Adom</Text>
         <View style={styles.avatarContainer}>
           <View style={styles.avatar}>
             <Image
@@ -44,7 +47,35 @@ export default function HomeScreen({ navigation }) {
         >
           <Text style={{ fontSize: 20, color: "#fff" }}>Pick a photo</Text>
         </TouchableOpacity> */}
-        <Carousel data={dummyData} />
+        <Carousel data={recipes} />
+      </View>
+      <View>
+        <Text style={styles.categoriesText}>Categories</Text>
+        {/* <ScrollView>
+          <FlatList
+            data={recipes}
+            horizontal={true}
+            ref={(flatList) => {
+              this.flatList = flatList;
+            }}
+            keyExtractor={(item, index) => "key" + index}
+            horizontal
+            showsHorizontalScrollIndicator={false}
+            renderItem={({ item }) => {
+              return (
+                <View>
+                  <View>
+                    <Image
+                      source={{ uri: item.url }}
+                      style={styles.categoryItem}
+                    />
+                  </View>
+                </View>
+              );
+            }}
+          />
+        </ScrollView> */}
+        <Category data={recipes} />
       </View>
     </View>
   );
@@ -56,6 +87,7 @@ const styles = StyleSheet.create({
     // backgroundColor: "#fff",
     // alignItems: "center",
     // justifyContent: "center",
+    marginTop: -10,
   },
   //   container: {
   //     flex: 1,
@@ -82,6 +114,11 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     borderColor: "#4285F4",
   },
+  welcomeText: {
+    // padding: 14,
+    fontSize: 24,
+    fontWeight: "bold",
+  },
   avatar: {
     height: "95%",
     width: "95%",
@@ -94,11 +131,22 @@ const styles = StyleSheet.create({
     height: "100%",
     width: "100%",
   },
-  heroText: {
-    fontSize: 35,
-    fontWeight: "700",
-    color: "white",
-    marginLeft: 25,
-    marginTop: 2,
+  // heroText: {
+  //   fontSize: 35,
+  //   fontWeight: "700",
+  //   color: "white",
+  //   marginLeft: 25,
+  //   marginTop: 2,
+  // },
+  categoriesText: {
+    padding: 14,
+    fontSize: 20,
+    fontWeight: "bold",
+  },
+  categoryItem: {
+    width: 80,
+    height: 80,
+    marginHorizontal: 10,
+    borderRadius: 10,
   },
 });
