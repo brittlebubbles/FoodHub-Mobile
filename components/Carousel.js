@@ -78,7 +78,7 @@ const Carousel = ({ navigation, data }) => {
                   height: 10,
                   width: 10,
                   backgroundColor: "#595959",
-                  margin: 8,
+                  margin: 7,
                   borderRadius: 5,
                 }}
               />
